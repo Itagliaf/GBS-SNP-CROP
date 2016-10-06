@@ -259,22 +259,22 @@ if ($dataType eq "PE") {
 		# Step 5A: Sorting the full set of genotype-specific centroids in order of decreasing length
 		print "\n\nSorting the full set of genotype-specific centroids in order of decreasing length...\n";
 		my $out5A = join (".",$MockRefName,"sorted_by_length","fasta");
-		system ( "usearch -sortbylength $UsearchIN -fastaout $out5A" );
+		system ( "/pico/home/userinternal/itagliaf/usearch -sortbylength $UsearchIN -fastaout $out5A" );#----hardcoded
 	
 		# Step 5B: Finding population-level initial clusters (centroids)
 		print "\nFinding population-level initial clusters (centroids)...\n";
 		my $out5B = join (".",$MockRefName,"clusters","fasta");
-		system ( "usearch -cluster_fast $out5A -id $id -threads $threads -consout $out5B -sizeout");
+		system ( "/pico/home/userinternal/itagliaf/usearch -cluster_fast $out5A -id $id -threads $threads -consout $out5B -sizeout"); #----hardcoded
 
 		# Step 5C: Sorting population-level initial clusters (centroids) by depth
-		print "\nSorting population-level initial clusters (centroids) by depth...\n";
+		print "\nSorting population-level initial clusters (centroids) by depth...\n"; 
 		my $out5C = join (".",$MockRefName,"sorted_by_size","fasta");
-		system ( "usearch -sortbysize $out5B -fastaout $out5C" );
+		system ( "/pico/home/userinternal/itagliaf/usearch -sortbysize $out5B -fastaout $out5C" );#----hardcoded
 	
 		# Step 5D: Reclustering the population-level centroids
 		print "\nReclustering the population-level centroids...\n";
 		$UsearchOUT = join (".",$MockRefName,"reclusters","fasta");
-		system ( "usearch -cluster_fast $out5C -id $id -threads $threads -consout $UsearchOUT" );
+		system ( "/pico/home/userinternal/itagliaf/usearch -cluster_fast $out5C -id $id -threads $threads -consout $UsearchOUT" ); #----harcoded
 
 		print "All sub-steps for clustering the population-level centroids were completed!\n";
 		unlink $UsearchIN;
@@ -332,22 +332,22 @@ if ($dataType eq "PE") {
 		# Step 5A: Sorting the full set of genotype-specific centroids in order of decreasing length
 		print "\n\nSorting the full set of genotype-specific centroids in order of decreasing length...\n";
 		my $out5A = join (".",$MockRefName,"sorted_by_length","fasta");
-		system ( "usearch -sortbylength $UsearchIN -fastaout $out5A" );
+		system ( "/pico/home/userinternal/itagliaf/usearch -sortbylength $UsearchIN -fastaout $out5A" );#----hardcoded
 
 		# Step 5B: Finding population-level initial clusters (centroids)
 		print "\nFinding population-level initial clusters (centroids)...\n";
 		my $out5B = join (".",$MockRefName,"clusters","fasta");
-		system ( "usearch -cluster_fast $out5A -id $id -threads $threads -consout $out5B -sizeout");
+		system ( "/pico/home/userinternal/itagliaf/usearch -cluster_fast $out5A -id $id -threads $threads -consout $out5B -sizeout");#----hardcoded
 
 		# Step 5C: Sorting population-level initial clusters (centroids) by depth
 		print "\nSorting population-level initial clusters (centroids) by depth...\n";
 		my $out5C = join (".",$MockRefName,"sorted_by_size","fasta");
-		system ( "usearch -sortbysize $out5B -fastaout $out5C" );
+		system ( "/pico/home/userinternal/itagliaf/usearch -sortbysize $out5B -fastaout $out5C" );#----hardcoded
 
 		# Step 5D: Reclustering the population-level centroids
 		print "\nReclustering the population-level centroids...\n";
 		$UsearchOUT = join (".",$MockRefName,"reclusters","fasta");
-		system ( "usearch -cluster_fast $out5C -id $id -threads $threads -consout $UsearchOUT" );
+		system ( "/pico/home/userinternal/itagliaf/usearch -cluster_fast $out5C -id $id -threads $threads -consout $UsearchOUT" );#----hardcoded
 
 		print "All sub-steps for clustering population-level centroids were completed!\n";
 		system ("rm *.AS.sub.fasta UsearchIN.fasta" );
@@ -485,22 +485,22 @@ if ($dataType eq "PE") {
 		# Step 5A: Sorting the full set of genotype-specific centroids in order of decreasing length
 		print "\n\nSorting the full set of genotype-specific centroids in order of decreasing length...\n";
 		my $out5A = join (".",$MockRefName,"sorted_by_length","fasta");
-		system ( "usearch -sortbylength $UsearchIN -fastaout $out5A" );
+		system ( "/pico/home/userinternal/itagliaf/usearch -sortbylength $UsearchIN -fastaout $out5A" );#----harcoded
 
 		# Step 5B: Finding population-level initial clusters (centroids)
 		print "\nFinding population-level initial clusters (centroids)...\n";
 		my $out5B = join (".",$MockRefName,"clusters","fasta");
-		system ( "usearch -cluster_fast $out5A -id $id -threads $threads -consout $out5B -sizeout");
+		system ( "/pico/home/userinternal/itagliaf/usearch -cluster_fast $out5A -id $id -threads $threads -consout $out5B -sizeout");#----hardcoded
 
 		# Step 5C: Sorting population-level initial clusters (centroids) by depth
 		print "\nSorting population-level initial clusters (centroids) by depth...\n";
 		my $out5C = join (".",$MockRefName,"sorted_by_size","fasta");
-		system ( "usearch -sortbysize $out5B -fastaout $out5C" );
+		system ( "/pico/home/userinternal/itagliaf/usearch -sortbysize $out5B -fastaout $out5C" );#----hardcoded
 
 		# Step 5D: Reclustering the population-level centroids
 		print "\nReclustering the population-level centroids...\n";
 		$UsearchOUT = join (".",$MockRefName,"reclusters","fasta");
-		system ( "usearch -cluster_fast $out5C -id $id -threads $threads -consout $UsearchOUT" );
+		system ( "/pico/home/userinternal/itagliaf/usearch -cluster_fast $out5C -id $id -threads $threads -consout $UsearchOUT" );#----hardcoded
 
 		print "All sub-steps for clustering population-level centroids were completed!\n";
 		unlink $UsearchIN;
@@ -556,22 +556,22 @@ if ($dataType eq "PE") {
 		# Step 5A: Sorting the full set of genotype-specific centroids in order of decreasing length
 		print "\n\nSorting the full set of genotype-specific centroids in order of decreasing length...\n";
 		my $out5A = join (".",$MockRefName,"sorted_by_length","fasta");
-		system ( "usearch -sortbylength $UsearchIN -fastaout $out5A" );
+		system ( "/pico/home/userinternal/itagliaf/usearch -sortbylength $UsearchIN -fastaout $out5A" );#----hardcoded
 
 		# Step 5B: Finding population-level initial clusters (centroids)
 		print "\nFinding population-level initial clusters (centroids)...\n";
 		my $out5B = join (".",$MockRefName,"clusters","fasta");
-		system ( "usearch -cluster_fast $out5A -id $id -threads $threads -consout $out5B -sizeout");
+		system ( "/pico/home/userinternal/itagliaf/usearch -cluster_fast $out5A -id $id -threads $threads -consout $out5B -sizeout");#----hardcoded
 
 		# Step 5C: Sorting population-level initial clusters (centroids) by depth
 		print "\nSorting population-level initial clusters (centroids) by depth...\n";
 		my $out5C = join (".",$MockRefName,"sorted_by_size","fasta");
-		system ( "usearch -sortbysize $out5B -fastaout $out5C" );
+		system ( "/pico/home/userinternal/itagliaf/usearch -sortbysize $out5B -fastaout $out5C" );#----hardcoded
 
 		# Step 5D: Reclustering the population-level centroids
 		print "\nReclustering the population-level centroids...\n";
 		$UsearchOUT = join (".",$MockRefName,"reclusters","fasta");
-		system ( "usearch -cluster_fast $out5C -id $id -threads $threads -consout $UsearchOUT" );
+		system ( "/pico/home/userinternal/itagliaf/usearch -cluster_fast $out5C -id $id -threads $threads -consout $UsearchOUT" );#----hardcoded
 
 		print "All sub-steps for clustering population-level centroids were completed!\n";
 		system ("rm *.R1.sub.fasta UsearchIN.fasta" );
