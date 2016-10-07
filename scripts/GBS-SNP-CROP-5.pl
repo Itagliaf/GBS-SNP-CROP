@@ -39,7 +39,7 @@ open my $BAR, "<", "$barcodesID_file" or die "Can't find barcode_ID file\n";
 while(<$BAR>) {
 	my $barcodesID = $_;
 	chomp $barcodesID;
-	my @barcode = split("\t", $barcodesID);
+	my @barcode = split(" ", $barcodesID);
 	my $barcode_list = $barcode[0];
 	my $TaxaNames = $barcode[1];
 	push @files, $TaxaNames;

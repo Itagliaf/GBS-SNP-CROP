@@ -41,7 +41,7 @@ if ($dataType eq "PE") {
 	while(<$BAR>) {
 		my $barcodesID = $_;
 		chomp $barcodesID;
-		my @barcode_ID = split("\t", $barcodesID);
+		my @barcode_ID = split(" ", $barcodesID);
 
 		if ( $barcode_hash{$barcode_ID[0]} ) {
 			die "Redundant barcodes in barcode-ID file!";
@@ -142,7 +142,7 @@ if ($dataType eq "PE") {
 	while(<$BAR>) {
 		my $barcodesID = $_;
 		chomp $barcodesID;
-		my @barcode_ID = split("\t", $barcodesID);
+		my @barcode_ID = split(" ", $barcodesID);
 
 		if ( $barcode_hash{$barcode_ID[0]} ) {
 			die "Redundant barcodes in barcode-ID file!";
