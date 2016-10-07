@@ -28,10 +28,9 @@ open my $IN, "<", "$barcodesID_file" or die "Can't find $barcodesID_file file\n"
 while(<$IN>) {
 	my $barcodesID = $_;
 	chomp $barcodesID;
-	my @barcode = split("\t", $barcodesID);
+	my @barcode = split(" ", $barcodesID);
 	my $barcode_list = $barcode[0];
 	my $TaxaNames = $barcode[1];
-
 	push @files, $TaxaNames;
 }
 close $IN;
