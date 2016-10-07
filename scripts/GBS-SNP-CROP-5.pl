@@ -115,9 +115,9 @@ print "\nAll SAM files were converted into binary (BAM) files.\n";
 # 2.2 Sorting BAM files
 foreach my $file (@files) {
 	my $input_bam = join (".", "$file","bam");
-	my $sort_out = join(".","$file","sorted");
+	my $sort_out = join(".","$file","sorted", "bam");
 	print "\nSorting $input_bam file...";
-	system ( "samtools sort $input_bam $sort_out" );
+	system ( "samtools sort $input_bam -o $sort_out" );
 }
 print "\nAll BAM files were sorted.\n";
 
