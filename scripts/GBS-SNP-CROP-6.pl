@@ -56,7 +56,7 @@ foreach my $file (@files) {
 	while (<$PILEUP>){
 		
 		$progress1++;
-		print "\033[JStatus: ${progress1} PILEUP entries processed..."."\033[G";
+		#print "\033[JStatus: ${progress1} PILEUP entries processed..."."\033[G";
 		
 		my @input1 = split("\t", $_);
 		my $ref = $input1[2];
